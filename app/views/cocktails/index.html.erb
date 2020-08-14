@@ -13,8 +13,11 @@
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
         <%=link_to cocktail_path(cocktail["id"]) do %>
-
-        <div class="card mb-4" style="background-image: url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg');">
+        <% if cocktail.photo.attached? %>
+          <div class="card mb-4" style="background-image: url('<%= cl_image_path(cocktail.photo.key, height: 300, width: 400, crop: :fill)%>');">
+        <% else %>
+          <div class="card mb-4">
+        <% end %>
           <h3><%= cocktail.name.capitalize %></h3>
         </div>
         <% end %>
