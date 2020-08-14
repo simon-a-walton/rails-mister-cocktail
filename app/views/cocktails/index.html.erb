@@ -1,13 +1,14 @@
 
+<h1 class="text-center">Cocktails</h1>
+<div class="container-fluid" id="imagebar" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url('<%= image_path("imagebar.jpg") %>')">
 
 
-<h1 class="text-center py-2 mt-5">Cocktails</h1>
 <p class="text-center py-1">Delicious recipes, modified by you!</p>
 
 
 <div class="container">
   <div class="row justify-content-end m-3">
-  <button type="button" class="btn btn-info"><%= link_to "Add a new cocktail",  new_cocktail_path %></button>
+  <button type="button" class="btn"><%= link_to "Add a new cocktail",  new_cocktail_path %></button>
   </div>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
@@ -26,4 +27,4 @@
   </div>
 </div>
 
-
+</div>

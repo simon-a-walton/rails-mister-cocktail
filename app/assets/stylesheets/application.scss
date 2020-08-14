@@ -15,6 +15,14 @@
 body {
   font-family: futura;
 }
+
+#imagebar {
+  background-image: asset-url('imagebar.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
 h1 {
   font-family: futura;
   }
@@ -30,6 +38,10 @@ h1 {
   }
 }
 
+  .container {
+    opacity: 1;
+  }
+
   .card {
   display: flex;
   flex-direction: column;
@@ -38,6 +50,7 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 250px;
+  opacity: 1;
   }
 
 
@@ -101,4 +114,33 @@ img {
   color: black;
   font-size: 20px;
   font-weight: none;
+}
+
+.btn a {
+  background-color: #CBDFC3;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  &:hover {
+    color:white;
+    background-color: black;
+  }
+}
+
+h1 {
+  background-color: white;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
