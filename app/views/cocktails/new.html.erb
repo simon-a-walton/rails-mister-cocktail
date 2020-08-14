@@ -1,0 +1,16 @@
+<div class="flex-container" id="new-page">
+
+  <h1>New Cocktail</h1>
+  <%= simple_form_for [@cocktail] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to root_path, { class: "btn btn-primary m-3" } do %>
+  <span class="label label-primary">Back</span>
+<% end %>
+
+</div>
+
+

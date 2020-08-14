@@ -1,0 +1,26 @@
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@random_url%>)">
+  <%= @cocktail.name.capitalize %>
+</div>
+<div id="cocktail-image">
+
+</div>
+  <div class="card-category pl-3">
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li class="js">Recipe: <%= dose.description %> <%= dose.ingredient.name.capitalize %>
+         <%=link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.description}?" } do %>
+          <i class="fa fa-trash p-2" aria-hidden="true"></i>
+        <% end %>
+        </li>
+        <% end %>
+    </ul>
+ </div>
+<div class="container-fluid px-4 pt-4">
+<h4>Add ingredients for <%= @cocktail.name.capitalize %></h4>
+<%= render 'doses/new', dose: @dose %></p>
+</div>
+
+<%= link_to root_path, { class: "btn btn-primary mx-4" } do %>
+  <span class="label label-primary">Back</span>
+<% end %>

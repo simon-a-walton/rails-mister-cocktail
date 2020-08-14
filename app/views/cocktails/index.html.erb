@@ -1,0 +1,27 @@
+
+
+
+<h1 class="text-center py-2 mt-4">Cocktails</h1>
+<p class="text-center py-1">Delicious recipes, modified by you!</p>
+
+
+<div class="container">
+  <div class="row justify-content-end m-3">
+  <button type="button" class="btn btn-info"><%= link_to "Add a new cocktail",  new_cocktail_path %></button>
+  </div>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <%=link_to cocktail_path(cocktail["id"]) do %>
+
+        <div class="card mb-4" style="background-image: url('<%=  %>');">
+          <h3><%= cocktail.name.capitalize %></h3>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
+
+
