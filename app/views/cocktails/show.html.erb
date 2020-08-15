@@ -1,5 +1,5 @@
 <% if @cocktail.photo.attached? %>
-          <div class="card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, crop: :fill)%>');">
+          <div class="card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, height: 40, width: 120)%>');">
         <% else %>
           <div class="card" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509320/bg_er6x8h.jpg)">
         <% end %>

@@ -85,7 +85,6 @@ h1 {
 .card-category {
   font-family: futura;
   display: flex;
-
   color: white;
   font-size: 32px;
   background-color: rgba(238, 53, 155, 0.7);
@@ -227,7 +226,8 @@ h1 {
 .container-fluid {
   background-repeat: no-repeat;
   background-size: auto;
-   background-color: #79B6CA;
+  background-color: rgba(121, 182, 202, 0.7);
+  color: white;
 }
 
 .container-logo {
