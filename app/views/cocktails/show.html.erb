@@ -1,7 +1,7 @@
 <% if @cocktail.photo.attached? %>
           <div class="card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, crop: :fill)%>');">
         <% else %>
-          <div class="card">
+          <div class="card" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509320/bg_er6x8h.jpg)">
         <% end %>
   <h1> <i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
 </div>
@@ -10,7 +10,7 @@
 </div>
   <div class="card-category pl-3">
     <ul>
-        <li class="list-unstyled"><i class="fas fa-wine-bottle"></i> Recipe List</li>
+        <li class="list-unstyled">Recipe List:</li>
       <% @cocktail.doses.each do |dose| %>
         <li class="js"><%= dose.description %> <%= dose.ingredient.name.capitalize %>
          <%=link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.description}?" } do %>
@@ -23,8 +23,7 @@
 <div class="container-fluid px-4 pt-4">
 <h4>Add ingredients for <%= @cocktail.name.capitalize %></h4>
 <%= render 'doses/new', dose: @dose %></p>
-</div>
-
-<%= link_to root_path, { class: "btn btn-primary m-3" } do %>
-  <span class="label label-primary text-left"><i class="fas fa-backward"></i></span>
+<%= link_to root_path, { class: "btn m-3" } do %>
+  <span class="label label-primary"><i class="fas fa-backward"></i></span>
 <% end %>
+</div>
