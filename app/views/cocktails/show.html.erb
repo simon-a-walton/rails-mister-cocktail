@@ -3,12 +3,12 @@
         <% else %>
           <div class="card" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509320/bg_er6x8h.jpg)">
         <% end %>
-  <h1> <i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
+  <h1 class="white-text"> <i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
 </div>
 
 
 </div>
-  <div class="card-category pl-3">
+  <div class="card-category pr-3">
     <ul>
         <li class="list-unstyled">Recipe List:</li>
       <% @cocktail.doses.each do |dose| %>
@@ -20,8 +20,8 @@
         <% end %>
     </ul>
  </div>
-<div class="container-fluid px-4 pt-4">
-<h4>Add ingredients for <%= @cocktail.name.capitalize %></h4>
+<div class="container-fluid px-4 py-5">
+<h4>Add dosage and ingredients for <%= @cocktail.name.capitalize %></h4>
 <%= render 'doses/new', dose: @dose %></p>
 <%= link_to root_path, { class: "btn m-3" } do %>
   <span class="label label-primary"><i class="fas fa-backward"></i></span>

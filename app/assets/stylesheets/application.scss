@@ -66,6 +66,13 @@ h1 {
   }
 }
 
+.white-text {
+  color: white;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0);
+  }
+}
+
 .card-title {
   color: white;
   h1 {
@@ -76,14 +83,9 @@ h1 {
 }
 
 .card-category {
-  background-size: cover;
   font-family: futura;
-  background-position: center;
-  height: 180px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
   color: white;
   font-size: 32px;
   background-color: rgba(238, 53, 155, 0.7);
@@ -208,7 +210,7 @@ h1 {
   background-color: #3371A4;
   color: white;
   text-decoration: none;
-  padding: 8px;
+  padding: 8px 24px;
   border: none;
   border-radius: 4px;
   position: relative;
