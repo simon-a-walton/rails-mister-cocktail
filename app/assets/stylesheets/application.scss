@@ -67,6 +67,7 @@ h1 {
 }
 
 .white-text {
+  text-shadow: 0 0 12px #FF0000, 0 0 16px #0000FF;
   color: white;
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0,0);
@@ -226,7 +227,7 @@ h1 {
 .container-fluid {
   background-repeat: no-repeat;
   background-size: auto;
-  background-color: rgba(121, 182, 202, 0.7);
+  background-color: #0D477D;
   color: white;
 }
 
@@ -235,9 +236,23 @@ h1 {
   background-repeat: no-repeat;
   background-size: 160px;
   padding: 24px;
+   h4 {
+  color: white;
+  text-shadow: 0 0 12px #FF0000, 0 0 16px #0000FF;
+  font-family: futura;
+  padding: 8px;
+  }
+}
+
+ h4 {
+  color: white;
+  font-family: futura;
+  padding: 8px 0;
 }
 
 .card-deck {
   color: white;
   border-radius: 4px;
 }
+
+
