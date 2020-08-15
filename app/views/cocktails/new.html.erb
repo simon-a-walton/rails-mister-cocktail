@@ -1,17 +1,24 @@
-<div class="flex-container" id="new-page">
+<div class="bg" id="opacity">
+  <div class="flex-container p-4">
 
-  <h1>New Cocktail</h1>
-  <%= simple_form_for [@cocktail] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit class: "btn btn-primary" %>
-  <% end %>
 
-  <%= link_to root_path, { class: "btn btn-primary m-3" } do %>
-  <span class="label label-primary">Back</span>
+
+  <div class="card-deck p-4 justify-content-center align-content-center">
+    <div class="card-product-new m-3">
+    <h1>Add your cocktail</h1>
+    </div>
+    <%= simple_form_for [@cocktail] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: "label" %>
+    <% end %>
+  </div>
+
+  <%= link_to root_path, { class: "btn m-3" } do %>
+  <span class="label label-primary"><i class="fas fa-backward"></i></span>
 <% end %>
-
+</div>
 </div>
 
 

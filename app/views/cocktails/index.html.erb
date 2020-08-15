@@ -1,12 +1,11 @@
-
+<div class="bg">
+  <div class="card-title">
+  <div class="container-logo p-5">
 <h1 class="text-center">Cocktails</h1>
-<div class="container-fluid" id="imagebar" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.6) 0%,rgba(255,255,255,0.9) 100%), url('<%= image_path("imagebar.jpg") %>')">
-
-
-<p class="text-center py-1">Delicious recipes, modified by you!</p>
-
-
-<div class="container">
+<p class="text-center">Delicious recipes modified by you!</p>
+</div>
+</div>
+<div class="container mt-0">
   <div class="row justify-content-end m-3">
   <button type="button" class="btn"><%= link_to "Add a new cocktail",  new_cocktail_path %></button>
   </div>
@@ -19,12 +18,12 @@
         <% else %>
           <div class="card mb-4">
         <% end %>
-          <h3><%= cocktail.name.capitalize %></h3>
+          <h3 class="text-link"><i class="fas fa-cocktail"></i> <%= cocktail.name.capitalize %></h3>
         </div>
         <% end %>
       </div>
     <% end %>
   </div>
-</div>
 
+</div>
 </div>

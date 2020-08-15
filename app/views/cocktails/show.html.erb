@@ -1,17 +1,18 @@
 <% if @cocktail.photo.attached? %>
-          <div class="card mb-4" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, height: 300, width: 400, crop: :fill)%>');">
+          <div class="card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, crop: :fill)%>');">
         <% else %>
-          <div class="card mb-4">
+          <div class="card">
         <% end %>
-   <%= @cocktail.name.capitalize %>
+  <h1> <i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
 </div>
-<div id="cocktail-image">
+
 
 </div>
   <div class="card-category pl-3">
     <ul>
+        <li class="list-unstyled"><i class="fas fa-wine-bottle"></i> Recipe List</li>
       <% @cocktail.doses.each do |dose| %>
-        <li class="js">Recipe: <%= dose.description %> <%= dose.ingredient.name.capitalize %>
+        <li class="js"><%= dose.description %> <%= dose.ingredient.name.capitalize %>
          <%=link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.description}?" } do %>
           <i class="fa fa-trash p-2" aria-hidden="true"></i>
         <% end %>
@@ -24,6 +25,6 @@
 <%= render 'doses/new', dose: @dose %></p>
 </div>
 
-<%= link_to root_path, { class: "btn btn-primary mx-4" } do %>
-  <span class="label label-primary">Back</span>
+<%= link_to root_path, { class: "btn btn-primary m-3" } do %>
+  <span class="label label-primary text-left"><i class="fas fa-backward"></i></span>
 <% end %>
