@@ -1,39 +1,35 @@
 <div class="bg" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509320/bg_er6x8h.jpg)">
-  <div class="card-title">
-<div class="row">
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 cocktail-card">
+      <h1 class="text-center card-title p-2"><i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
+    </div>
+    <% if @cocktail.photo.attached? %>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 cocktail-card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, width:250, height:250, gravity: :faces, crop: :fill)%>');">
+    <% else %>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 cocktail-card" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509329/cocktail-icon_vterfl.png)">
+    <% end %>
+      </div>
+  </div>
 
-<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 cocktail-card">
-          <h1 class="text-center p-3"><i class="fas fa-cocktail"></i>  <%= @cocktail.name.capitalize %></h1>
-
-</div>
-<% if @cocktail.photo.attached? %>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 cocktail-card" style="background-image: url('<%= cl_image_path(@cocktail.photo.key, height: 40, width: 120)%>');">
-        <% else %>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 cocktail-card" style="background-image: url(https://res.cloudinary.com/diiwzk17a/image/upload/v1597509329/cocktail-icon_vterfl.png)">
-        <% end %>
-         </div>
-
-</div>
-
-<div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 container-fluid-two py-4">
-    <ul>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 container-fluid-two py-4">
+      <ul>
         <li class="list-unstyled p-3">Recipe List:</li>
-      <% @cocktail.doses.each do |dose| %>
+         <% @cocktail.doses.each do |dose| %>
         <li class="js p-3"><%= dose.description %> <%= dose.ingredient.name.capitalize %>
-         <%=link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.description} #{dose.ingredient.name.capitalize}?" } do %>
-          <i class="fa fa-trash p-2" aria-hidden="true"></i>
+        <%=link_to dose_path(dose), method: :delete, data: { confirm: "Delete #{dose.description} #{dose.ingredient.name.capitalize}?" } do %>
+        <i class="fa fa-trash p-2" aria-hidden="true"></i>
         <% end %>
         </li>
         <% end %>
     </ul>
- </div>
-<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 container-fluid px-5 py-5">
-<h4>Add dosage and ingredients for <%= @cocktail.name.capitalize %></h4>
-<%= render 'doses/new', dose: @dose %></p>
-<%= link_to root_path, { class: "btn" } do %>
-  <span class="label label-primary"><i class="fas fa-backward"></i></span>
-<% end %>
-</div>
-</div>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 container-fluid px-5 py-5">
+    <h4>Add dosage and ingredients for <%= @cocktail.name.capitalize %></h4>
+    <%= render 'doses/new', dose: @dose %></p>
+    <%= link_to root_path, { class: "btn" } do %>
+    <span class="label label-primary"><i class="fas fa-backward"></i></span>
+    <% end %>
+  </div>
 </div>
