@@ -61,7 +61,7 @@ h1 {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 250px;
-  position: relative;
+
   &:hover {
     box-shadow: 0 0 15px rgba(0,0,0,1);
   }
@@ -85,16 +85,13 @@ h1 {
 }
 
 .card-category {
-  font-family: futura;
   display: flex;
+  justify-content: flex-start;
+  font-family: futura;
   color: white;
   font-size: 32px;
   background-color: rgba(238, 53, 155, 0.7);
-  position: absolute;
-  top: 24px;
-  right: 24px;
 }
-
 
 
 .card-product {
@@ -145,21 +142,20 @@ img {
 
 .js {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: white;
-  font-size: 12px;
   font-weight: none;
 }
 
 .list-unstyled {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
   color: white;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: none;
   font-family: futura;
+
 
 }
 
@@ -217,11 +213,16 @@ a {
 }
 
 .container-fluid {
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-color: #0D477D;
+  background-color: rgb(13, 71, 125);
+  color: white;
+
+}
+
+.container-fluid-two {
+  background-color: #E83394;
   color: white;
 }
+
 
 .container-logo {
   background-position: center;
