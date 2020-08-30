@@ -11,10 +11,11 @@ require 'open-uri'
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 json = JSON.parse(open(url).read)
 
-json["drinks"].each do |ingredient|
+list = json["drinks"].each do |ingredient|
   Ingredient.create(name: ingredient["strIngredient1"])
 end
 
+list.sort_by {|k, v| v}
 
 puts "#{Ingredient.count} ingredients created"
 
