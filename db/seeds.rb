@@ -11,11 +11,17 @@ require 'open-uri'
 url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
 json = JSON.parse(open(url).read)
 
-list = json["drinks"].each do |ingredient|
-  Ingredient.create(name: ingredient["strIngredient1"])
+list = []
+
+json["drinks"].each do |ingredient|
+ list << Ingredient.create(name: ingredient["strIngredient1"])
 end
 
-list.sort_by {|k, v| v}
+sorted = list.map do |obj|
+  obj.name
+end
 
-puts "#{Ingredient.count} ingredients created"
+
+return sorted.sort
+
 
